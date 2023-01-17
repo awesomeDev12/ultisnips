@@ -1,0 +1,213 @@
+# A valid snippet should starts with:
+#
+#		snippet trigger_word [ "description" [ options ] ]
+#
+# and end with:
+#
+#		endsnippet
+#
+# Snippet options:
+#
+#		b - Beginning of line.
+#		i - In-word expansion.
+#		w - Word boundary.
+#		r - Regular expression
+#		e - Custom context snippet
+#		A - Snippet will be triggered automatically, when condition matches.
+#
+# Basic example:
+#
+#		snippet emitter "emitter properties" b
+#		private readonly ${1} = new Emitter<$2>()
+#		public readonly ${1/^_(.*)/$1/}: Event<$2> = this.$1.event
+#		endsnippet
+#
+# Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
+
+
+
+
+snippet basic "Basic Code Snippet for CPP" b
+#include <iostream>
+using namespace std;
+
+$0
+
+
+int main(){
+
+
+
+
+	return 0;
+}
+endsnippet
+
+
+
+snippet snipcp "Basic Snippet for competitve programming" b
+#include <bits/stdc++.h>
+using namespace std;
+
+typedef long long int li;
+typedef long double ld;
+
+
+$0
+
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+#endif
+
+    int tt;
+    cin >> tt;
+
+    while (tt-- > 0)
+    {
+        
+    }
+
+    return 0;
+}
+endsnippet
+
+snippet snipleet "Basic Snippet for Leetcode" b
+#include <bits/stdc++.h>
+using namespace std;
+
+typedef long long int li;
+typedef long double ld;
+
+
+$0
+
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+#endif
+
+
+    $0
+
+
+
+
+    return 0;
+}
+endsnippet
+
+snippet sniptree "Binary Tree" b
+struct TreeNode{
+    int val,ht;
+    TreeNode *left,*right;
+
+    TreeNode(int data){
+        val=data;
+        ht=1;
+        left=NULL;
+        right=NULL;
+    }
+
+};
+
+namespace my{
+    int height(TreeNode *node){
+        if(node==NULL)return 0;
+
+        int lh,rh;
+        lh=height(node->left);
+        rh=height(node->right);
+        return 1 + max(lh,rh);
+    }
+
+    vector<vector<string>>printTree(TreeNode *root){
+
+        int m,n;
+        // m is number of columns
+        // n is number of rows
+        int rootHt = height(root);
+        m = rootHt;
+        n = (1 << rootHt)-1;
+        vector<vector<string>>res(m,vector<string>(n));
+
+
+        queue<pair<TreeNode*,pair<int,int>>>q;
+        q.push({root,  { 0, (n-1)/2 }  });
+
+        while(!q.empty())
+        {
+            int sz=q.size();
+            for(int i=0;i<sz;i++)
+            {
+                auto it=q.front();
+                q.pop();
+                TreeNode *cur=it.first;
+                int row= it.second.first;
+                int col= it.second.second;
+
+                int exp,jump;
+                if(cur->left || cur->right){
+                    exp = rootHt-row-2;
+                    jump = (1<<exp);
+                }
+
+                if(cur->left){
+                    q.push({cur->left,  { row+1, col-jump }  });
+                }
+                if(cur->right){
+                    q.push({cur->right, { row+1, col+jump }  });
+                }
+
+                res[row][col]= to_string(cur->val);
+            }
+        }
+        return res;
+    }
+}
+
+endsnippet
+
+
+snippet snipdisp "Display contents of vector" b
+namespace my{
+    template<class  T>
+    void display(const vector<T> &vec,string separator = " "){
+
+        for(int i=0;i<vec.size();i++)
+        {
+            cout << vec[i] << separator;
+        }
+        cout<<endl;
+    }
+
+    template<class  T>
+    void display(const vector<vector<T>> &vec,string separator = " "){
+
+        for(int i=0;i<vec.size();i++)
+        {
+            for(int j=0;j<vec[i].size();j++)
+            {
+                cout << vec[i][j] << separator;
+            }
+            cout<<endl;
+        }
+        cout<<endl;
+    }
+}
+endsnippet
+
+
+
