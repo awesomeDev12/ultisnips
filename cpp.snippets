@@ -194,6 +194,16 @@ namespace my{
     }
 
     template<class  T>
+    void display(const vector<pair<T,T>> &vec,string separator = " "){
+
+        for(int i=0;i<vec.size();i++)
+        {
+            cout <<"("<<vec[i].first<<","<<vec[i].second<<")"<< separator;
+        }
+        cout<<endl;
+    }
+
+    template<class  T>
     void display(const vector<vector<T>> &vec,string separator = " "){
 
         for(int i=0;i<vec.size();i++)
