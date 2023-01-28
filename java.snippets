@@ -25,12 +25,12 @@
 # Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
 
 snippet sop "System.out.print()" b
-System.out.print("$0");
+System.out.print($1); $0
 endsnippet
 
 
 snippet sopl "System.out.println()" b
-System.out.println("$0");
+System.out.println($1); $0
 endsnippet
 
 
@@ -45,7 +45,7 @@ public static void main(String args[]){
 	${1:Solution} ob = new ${1:Solution}(); 
 	
 
-	$2
+	$0
 
 
 
