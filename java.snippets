@@ -37,12 +37,12 @@ endsnippet
 snippet snipcp "Basic snippet for CP" b
 import java.util.*;
 
-class ${1:Solution}{
+class ${2:`!p snip.rv = snip.basename.replace('-', ' ').capitalize()`}{
 
 
 public static void main(String args[]){
 	Scanner sc = new Scanner(System.in);
-	${1:Solution} ob = new ${1:Solution}(); 
+	${2:`!p snip.rv = snip.basename.replace('-', ' ').capitalize()`} ob = new ${2:`!p snip.rv = snip.basename.replace('-', ' ').capitalize()`}(); 
 	
 
 	$0
