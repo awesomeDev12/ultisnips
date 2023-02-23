@@ -106,6 +106,9 @@ int main()
 #endif
 
 
+
+    Solution ob;
+
     $0
 
 
@@ -222,6 +225,24 @@ namespace my{
         }
         cout<<endl;
     }
+}
+endsnippet
+
+
+## Iteration
+# for i
+snippet fori
+for (int ${2:i} = 0; $2 < ${1:count}; $2${3:++}) 
+{
+	${4}
+}
+endsnippet
+
+# foreach
+snippet fore
+for (${1:auto} ${2:i} : ${3:container}) 
+{
+	${4}
 }
 endsnippet
 
