@@ -243,20 +243,80 @@ endsnippet
 ## Iteration
 # for i
 snippet fori
-for (int ${2:i} = 0; $2 < ${1:count}; $2${3:++}) 
-{
-	${4}
+for (int ${2:i} = ${3:0}; $2 < ${1:count}; $2${4:++}) {
+	${5:// codeblock}
 }
 endsnippet
 
 # foreach
 snippet fore
-for (${1:auto} ${2:i} : ${3:container}) 
-{
-	${4}
+for (${1:auto} ${2:i} : ${3:container}) {
+	${4:// codeblock}
 }
 endsnippet
 
+
+# while
+snippet whi
+while (${1:condition}) {
+	${2:// codeblock}
+}
+endsnippet
+
+
+# do- while
+snippet dowhi
+do {
+	${2:// codeblock}
+} while (${1:condition}) ;
+
+endsnippet
+
+# try exception
+snippet try
+try {
+    ${2:// codeblock}
+}catch(${1:...}) {
+    ${3:// catch block}
+}
+endsnippet
+
+# if
+snippet if 
+if ( ${1:condition} ) {
+    ${2:// codeblock}
+}
+endsnippet
+
+
+# ifif
+snippet ifif
+if ( ${1:condition 1} ) {
+    ${3:// codeblock} 
+}else if( ${2:condition 2} ){
+    ${4:// codeblock} 
+endsnippet
+
+# ifel
+snippet ifel
+if ( ${1:condition} ) {
+    ${2:// codeblock}
+}else{
+    ${3:// codeblock}
+}
+endsnippet
+
+
+# ififel
+snippet ififel
+if ( ${1:condition 1} ) {
+    ${3:// codeblock} 
+}else if( ${2:condition 2} ){
+    ${4:// codeblock} 
+}else{
+    ${5:// codeblock} 
+}
+endsnippet
 
 ###########################################################################
 #                 Vim-snippets           TextMate Snippets                            #
